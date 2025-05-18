@@ -15,3 +15,26 @@
 | ----------- | ------------------------------------ |
 | **3V**      | LED **+** (anode)                    |
 | **GND**     | → 10Ω resistor → LED **-** (cathode) |
+
+
+**Schematic**
+      +-----------------------------+
+      |        ESP8266 (NodeMCU)   |
+      |                             |
+      |     [D1] ----> SCL --------+-----+
+      |     [D2] ----> SDA --------|-----|--> OLED 0.96"
+      |     [3V] ----> VCC --------|-----|
+      |     [GND] ---> GND --------+-----+
+      |                             |
+      |     [D6] ----> PUSH BUTTON  o====o <--- GND
+      |                             |
+      |                             |
+      |     [3V] ----> LED (+)      |
+      |             (YELLOW LED)    |
+      |     [GND] --> [10Ω Resistor]---> LED (-)
+      +-----------------------------+
+
+Legend:
+  o====o  → Push button terminals
+  --->    → Wire connection
+  [ ]     → Pin label or component
