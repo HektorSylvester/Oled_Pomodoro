@@ -13,8 +13,8 @@ Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 #define SCL_PIN 5  // D1
 #define BUTTON_PIN 12  // D6 on NodeMCU
 
-const int WORK_DURATION = 2;   // 25 minutes (for testing, use 2s)
-const int BREAK_DURATION = 2;  // 5 minutes
+const int WORK_DURATION = 1500;   // 25 minutes = 1500 sec (for testing, use 2s)
+const int BREAK_DURATION = 300;  // 5 minutes = 300 sec
 
 enum State { WORK, BREAK };
 State currentState = WORK;
@@ -22,7 +22,7 @@ int completedPomodoros = 0;
 
 int timeRemaining = WORK_DURATION;
 unsigned long previousMillis = 0;
-bool isPaused = false;
+bool isPaused = true;
 
 unsigned long lastButtonPress = 0;
 const unsigned long debounceDelay = 200;
@@ -75,7 +75,7 @@ void drawTime() {
     display.setTextSize(2);  // Big text
     display.setTextColor(SSD1306_WHITE);
     display.setCursor(10, 25);  // Centered visually
-    display.print("Well Done!");
+    display.print("Well Done");
     display.display();
     return;  // Skip drawing timer/dots
   }
