@@ -17,7 +17,6 @@
 | **GND**     | → 10Ω resistor → LED **-** (cathode) |
 
 
-**Schematic**
       +-----------------------------+
       |        ESP8266 (NodeMCU)   |
       |                             |
